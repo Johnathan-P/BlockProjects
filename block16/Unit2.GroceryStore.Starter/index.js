@@ -24,9 +24,11 @@ function logNames(items) {
  * @param {Item[]} items - array of items
  * @returns {string[]} an array of item names in all uppercase
  */
+
 function getUppercaseNames(items) {
-  
   // TODO: use `map`
+  
+  console.log(items.map(element => element.name.toUpperCase()));
 }
 
 /**
@@ -35,6 +37,7 @@ function getUppercaseNames(items) {
  * @returns {Item} - the item in `items` with the given `id`
  */
 function getItemById(items, id) {
+  return items.find((element) => element.id == id);
   // TODO: use `find`
 }
 
@@ -44,6 +47,13 @@ function getItemById(items, id) {
  * @returns {number} the price of the item named `name`
  */
 function getItemPriceByName(items, name) {
+  for (let i = 0; items.length > i; i++)
+  {
+    if (items[i].name == name)
+    {
+      return items[i].price;
+    }
+  }
   // TODO: use a loop!
 }
 
@@ -53,6 +63,7 @@ function getItemPriceByName(items, name) {
  * @returns {Item[]} array of items that belong to the given `category`
  */
 function getItemsByCategory(items, category) {
+  return items.filter((element) => element.category === category);
   // TODO: use `filter`
 }
 
@@ -60,7 +71,28 @@ function getItemsByCategory(items, category) {
  * @param {Item[]} items - array of items
  * @returns {number} the total quantity of all items
  */
+function splitItems(items)
+{
+  const n = [];
+  for (let i = 0; items.length > i; i++)
+  {
+    n.push(items[i].quantity)
+  }
+  return n;
+}
+function splitPrices(items)
+{
+  const n = [];
+  for (let i = 0; items.length > i; i++)
+  {
+    n.push(items[i].price * items[i].quantity);
+  }
+  return n;
+}
 function countItems(items) {
+  const arr = splitItems(items);
+  const sum = arr.reduce((partialSum, a) => partialSum + a, 0);
+  return sum;
   // TODO: use `reduce`
 }
 
@@ -69,6 +101,9 @@ function countItems(items) {
  * @returns {number} the cost of all given items
  */
 function calculateTotalPrice(items) {
+  const arr = splitPrices(items);
+  const sum = arr.reduce((price, quantity) => price + quantity, 0);
+  return sum;
   // TODO: use `reduce`
 }
 
