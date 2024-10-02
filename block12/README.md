@@ -1,1 +1,0 @@
-My Personal Website built around various animals i have definitely interviewed along with some of their favorite song lyrics and lively remedies
