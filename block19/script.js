@@ -15,6 +15,8 @@ function getRandomInt(min, max) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+const prices = []
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
 const populate = async () => {
@@ -31,6 +33,11 @@ const populate = async () => {
             const newItem = document.createElement("li");
             newItem.textContent = `NAME: ${name} PRICE: ${price} OCCUPATION: ${occupation}`
             list.appendChild(newItem);
+    prices.push(price);
+    let average = document.getElementById("average");
+    let pie = prices.reduce((a, b) => a + b) / prices.length;
+    average.textContent = `Average Starting Price => $${pie}`;
+
     populate();
 }
 
