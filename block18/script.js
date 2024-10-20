@@ -1,7 +1,7 @@
 //multiply 2 numbers with error handlers.
 //i'll write seperate functions for each error i run into.
 let a = "847568srguer"
-let b = 
+let b = 6
 
 function Multiply(a, b) {
     try{
