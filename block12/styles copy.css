@@ -1,0 +1,29 @@
+.Space {
+    margin-left: 100px;
+    margin-right: 100px;
+    background-color: rgba(41, 41, 44, 0.479);
+}
+
+.heads {
+    background-color: rgb(167, 60, 60);
+    margin-bottom: 200px;
+}
+
+#paragraphs {
+    padding: 15px;
+    background-color:rgb(167, 60, 60);
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.hyperlinks {
+    color: white;   
+}
+
+h1 {
+    text-align: center;
+}
+
+body {
+    background-color: gray;
+}
